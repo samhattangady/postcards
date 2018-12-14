@@ -1,12 +1,23 @@
 <template>
-  <div>
+  <div class='container'>
     <h1> Postcards from Sam </h1>
-    <div v-for="postcard in postcards">
-      To: 
-      {{postcard.to}} : {{toDate(postcard.date)}}
-      <br><br>
-      {{postcard.message}}
-      <hr>
+    <div v-for="postcard in postcards" class='content'>
+      <div class='single-card'>
+        <div class='to-col'>
+          <div class='recepient'>
+            To: 
+            <br>
+            {{postcard.to}}
+          </div>
+          <div class='date'>
+            {{toDate(postcard.date)}}
+          </div>
+        </div>
+        <hr>
+        <div class='message-col'>
+          {{postcard.message}}
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -34,8 +45,42 @@ export default {
   },
   methods: {
     toDate: function(d) {
-      return new Date(d).toLocaleDateString('en-IN');
+      let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      let timestamp = new Date(d);
+      return months[timestamp.getMonth()]+' '+timestamp.getDate()+', '+(1900+timestamp.getYear());
     }
   }
 }
 </script>
+
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff3e0;
+}
+.content {
+  max-width: 800px;
+}
+.single-card {
+  display: flex;
+  margin-bottom: 40px;
+  background-color: #efebe9;
+  padding: 30px;
+  border-radius: 13px;
+  box-shadow: 5px 10px #32272333;
+}
+.to-col {
+  flex-grow: 7;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.message-col {
+  flex-grow: 1;
+  padding-left: 10px;
+}
+</style>
