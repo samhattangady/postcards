@@ -12,11 +12,11 @@ export default {
 
 <style>
 #app {
-  font-family: 'Coming Soon', cursive;
-  font-size: 20px;
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #3e2723;
+  color: #455a64;
 }
 body {
   margin: 0px;

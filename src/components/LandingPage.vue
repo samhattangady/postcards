@@ -1,6 +1,7 @@
 <template>
   <div class='container'>
     <h1> Postcards from Sam </h1>
+    <p class='sub'> Writing Abstract Postcards for Abstract Purposes </p>
     <div v-for="postcard in postcards" class='content'>
       <div class='single-card'>
         <div class='to-col'>
@@ -59,25 +60,33 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff3e0;
+  background-color: #cfd8dc;
+}
+.sub {
+  text-align: center;
+  margin-top: -30px;
+  font-size: 16px;
 }
 .content {
   max-width: 800px;
 }
 .single-card {
-  display: flex;
+  margin: 10px;
   margin-bottom: 40px;
-  background-color: #efebe9;
+  background-color: #eceff1;
   padding: 30px;
-  border-radius: 13px;
-  box-shadow: 5px 10px #32272333;
+  box-shadow: 5px 8px #546e7a33;
+  display: flex;
 }
 .to-col {
-  flex-grow: 7;
+  min-width: 100px;
+  flex-grow: 3;
   padding-right: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+}
+.date {
+  padding-top: 15px;
 }
 .message-col {
   flex-grow: 1;
