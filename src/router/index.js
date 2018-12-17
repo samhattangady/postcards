@@ -17,6 +17,6 @@ export default new Router({
       name: 'EntryPage',
       component: EntryPage
     }
-  ]
+  ],
 })
 
