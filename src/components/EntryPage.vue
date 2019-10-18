@@ -80,6 +80,8 @@ export default {
       })
       .then(docRef => {
         console.log("Document written with ID: ", docRef.id);
+        this.entry = '';
+        this.to = '';
         this.$router.push('/');
       })
       .catch(function(error) {
