@@ -9,8 +9,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'LandingPage',
-      component: LandingPage
+      name: 'EntryPage',
+      component: EntryPage
     }, 
     {
       path: '/post',
